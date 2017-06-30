@@ -1,4 +1,4 @@
-package com.dhy.aedittext;
+package com.dhy.drawablecentertext;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
