@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dhy.demo.MainActivity">
+
+    <com.dhy.aedittext.AEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:hint="center for hint"
+        android:minHeight="45dp" />
+
+    <com.dhy.aedittext.AEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/colorAccent"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:minHeight="45dp"
+        android:text="left for text and forcused" />
+</LinearLayout>
