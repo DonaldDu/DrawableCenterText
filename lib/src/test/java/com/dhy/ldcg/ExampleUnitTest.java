@@ -1,4 +1,4 @@
-package com.dhy.drawablecentertext;
+package com.dhy.ldcg;
 
 import org.junit.Test;
 

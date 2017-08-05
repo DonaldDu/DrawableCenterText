@@ -1,26 +1,28 @@
-package com.dhy.drawablecentertext;
+package com.dhy.ldcg;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 
 /**
- * show hint and left_drawable in center, left when focused or none empty text
+ * left drawable center gravity.
+ * show text and left_drawable in center
  */
-public class AEditText extends android.support.v7.widget.AppCompatEditText {
-    public AEditText(Context context) {
+public class LeftDrawableCenterGravityTextView extends android.support.v7.widget.AppCompatTextView {
+    public LeftDrawableCenterGravityTextView(Context context) {
         super(context);
         init();
     }
 
-    public AEditText(Context context, AttributeSet attrs) {
+    public LeftDrawableCenterGravityTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public AEditText(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LeftDrawableCenterGravityTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -33,17 +35,13 @@ public class AEditText extends android.support.v7.widget.AppCompatEditText {
     protected void onDraw(Canvas canvas) {
         Drawable[] drawables = getCompoundDrawables();
         Drawable drawableLeft = drawables[0];
-        if (drawableLeft != null && shouldCenter() && getMeasuredWidth() > 0) {
-            float textWidth = getPaint().measureText(getHint().toString());
+        if (drawableLeft != null && getMeasuredWidth() > 0) {
+            float textWidth = getPaint().measureText(getText().toString());
             int drawablePadding = getCompoundDrawablePadding();
             int drawableWidth = drawableLeft.getIntrinsicWidth();
             float bodyWidth = textWidth + drawablePadding + drawableWidth;
             canvas.translate((getMeasuredWidth() - bodyWidth) / 2, 0);
         }
         super.onDraw(canvas);
-    }
-
-    boolean shouldCenter() {
-        return length() == 0 && !isFocused();
     }
 }

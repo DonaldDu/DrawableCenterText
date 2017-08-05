@@ -1,1 +1,1 @@
-include ':app', ':AEditText'
+include ':app', ':lib'

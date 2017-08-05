@@ -1,27 +1,28 @@
-package com.dhy.drawablecentertext;
+package com.dhy.ldcg;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 
 /**
- * show hint and left_drawable in center, left when none empty text
+ * left drawable center gravity.
+ * show hint and left_drawable in center, left when focused or none empty text
  */
-public class ATextView extends android.support.v7.widget.AppCompatTextView {
-    public ATextView(Context context) {
+public class LeftDrawableCenterGravityEditText extends android.support.v7.widget.AppCompatEditText {
+
+    public LeftDrawableCenterGravityEditText(Context context) {
         super(context);
         init();
     }
 
-    public ATextView(Context context, @Nullable AttributeSet attrs) {
+    public LeftDrawableCenterGravityEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public ATextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LeftDrawableCenterGravityEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -45,6 +46,6 @@ public class ATextView extends android.support.v7.widget.AppCompatTextView {
     }
 
     boolean shouldCenter() {
-        return length() == 0;
+        return length() == 0 && !isFocused();
     }
 }

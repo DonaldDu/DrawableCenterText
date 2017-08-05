@@ -1,4 +1,4 @@
-package com.dhy.drawablecentertext;
+package com.dhy.ldcg;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
